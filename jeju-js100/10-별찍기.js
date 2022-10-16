@@ -18,7 +18,7 @@ for (let i = 0; i < inputStar; i++) { // 별이 몇 줄 찍히는지
   for (let k = 0; k <= (i * 2); k++) { // 별을 찍게 하는 곳
     star += "*";
   }
-  star += "\n"; // 개행
+  star += "\n"; // 개행 구간
 }
 console.log(star);
 
