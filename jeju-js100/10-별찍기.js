@@ -10,15 +10,15 @@
 let inputStar = parseInt(prompt('몇 줄짜리 트리 만들거니?', ''));
 let star = "";
 
-for (let i = 0; i < inputStar; i++) {
-  for (let j = 0; j <= (inputStar - i); j++) {
+for (let i = 0; i < inputStar; i++) { // 별이 몇 줄 찍히는지
+  for (let j = 0; j <= (inputStar - i); j++) { // 별 중앙으로 위치
     star += " ";
   }
 
-  for (let k = 0; k <= (i * 2); k++) {
+  for (let k = 0; k <= (i * 2); k++) { // 별을 찍게 하는 곳
     star += "*";
   }
-  star += "\n";
+  star += "\n"; // 개행
 }
 console.log(star);
 
