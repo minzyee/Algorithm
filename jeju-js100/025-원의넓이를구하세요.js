@@ -5,9 +5,22 @@
 // '입력으로 반지름의 길이 정수 n이 주어지면 원의 넓이를 반환하는 함수'를 만들어 주세요.
 
 // 원의 넓이 = (반지름길이 X 반지름길이) X 3.14
+// Math.PI.toFixed(자릿수);
 
 let radius = parseInt(prompt("원의 반지름 길이를 입력해주세요."));
 
 function areaOfCircle(radius) {
 	return radius * radius * Math.PI.toFixed(2);
 }
+
+// 생성자 함수로 원의 넓이 구하기
+let radius2 = prompt("원의 반지름 입력");
+function Circle(radius2) {
+	this.radius = radius2;
+	this.getArea = function () {
+		return Math.PI.toFixed(2) * radius2 ** 2;
+	};
+}
+
+let circle1 = new Circle(radius2);
+console.log(circle1); // 3 입력시, 28.26
