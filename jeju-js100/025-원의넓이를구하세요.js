@@ -17,10 +17,13 @@ function areaOfCircle(radius) {
 let radius2 = prompt("원의 반지름 입력");
 function Circle(radius2) {
 	this.radius = radius2;
-	this.getArea = function () {
-		return Math.PI.toFixed(2) * radius2 ** 2;
-	};
 }
+
+// Circle의 프로토타입에 getArea() 메서드를 등록해서 불필요한 메서드 중복 제거함
+// Circle 생성자 함수가 생성하는 모든 인스턴스는 하나의 getArea 메서드를 상속받아 사용할 수 있다.
+Circle.prototype.getArea = function () {
+	return Math.PI.toFixed(2) * radius2 ** 2;
+};
 
 let circle1 = new Circle(radius2);
 console.log(circle1); // 3 입력시, 28.26
