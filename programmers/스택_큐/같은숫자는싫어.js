@@ -32,3 +32,8 @@ function solution(arr) {
 		return result;
 	});
 }
+
+// 방법3) filter 메서드를 사용하여 현재 요소를 기준으로 이전 요소와 비교하여 조건에 맞는 것만 필터링한다.
+function solution2(arr) {
+	return arr.filter((value, index) => value !== arr[index - 1]);
+}
