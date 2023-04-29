@@ -12,7 +12,7 @@ let emergency = [3, 76, 24];
 
 function solution(emergency) {
 	let sorted = [...emergency].sort((a, b) => b - a); // [76, 24, 3]
-	emergency.map((value) => sorted.indexOf(value) + 1);
+	return emergency.map((value) => sorted.indexOf(value) + 1);
 }
 
 // indexOf(인덱스번호를 찾을 값): 특정 문자의 위치를 찾을 때 사용한다.
