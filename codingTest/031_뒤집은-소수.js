@@ -9,14 +9,40 @@
 // 3. 소수가 맞으면 answer에 push 한다.
 
 let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
+
+// 소수: 1과 자기 자신만을 약수로 갖는 수이다. 1은 소수가 될 수 없다.
 function isPrime(num) {
+	// 1과 자기 자신 이외에 나누어 떨어지는 수가 있으면 소수가 아니기 때문에 false를 반환한다.
+	if (num === 1) return false;
+
+	for (let i = 2; i <= parseInt(num / 2); i++) {
+		if (num % i === 0) return false;
+	}
+	return true;
+}
+
+function solution(arr) {
+	let answer = [];
+
+	for (let x of arr) {
+		let result = Number(x.toString().split("").reverse().join(""));
+		if (isPrime(result)) answer.push(result);
+	}
+
+	return answer;
+}
+
+console.log(solution(arr));
+
+// 해답
+function isPrime1(num) {
 	if (num === 1) return false;
 	for (let i = 2; i <= parseInt(Math.sqrt(num)); i++) {
 		if (num % i === 0) return false;
 	}
 	return true;
 }
-function solution(arr) {
+function solution1(arr) {
 	let answer = [];
 	for (let x of arr) {
 		let res = 0;
@@ -25,9 +51,9 @@ function solution(arr) {
 			res = res * 10 + t;
 			x = parseInt(x / 10);
 		}
-		if (isPrime(res)) answer.push(res);
+		if (isPrime1(res)) answer.push(res);
 	}
 	return answer;
 }
 
-console.log(solution(arr));
+console.log(solution1(arr));
