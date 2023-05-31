@@ -6,8 +6,11 @@
 // 길이가 같은 두 개의 단어가 주어지면 두 단어가 아나그램인지 판별하는 프로그램을 작성하세요.
 // 아나그램 판별시 대소문자가 구분됩니다.
 
-let str1 = "AbaAeCe";
-let str2 = "baeeACA";
+// let str1 = "AbaAeCe";
+// let str2 = "baeeACA";
+
+let str1 = "abaCC";
+let str2 = "Caaab";
 
 function solution(str1, str2) {
 	let answer = "YES";
@@ -22,7 +25,9 @@ function solution(str1, str2) {
 	}
 
 	for (let x of str2) {
-		if (!map.has(x)) return "NO";
+		// 키 있는지 확인해서 없거나, 아니면 키의 값이 0일 때 NO를 리턴
+		if (!map.has(x) || map.get(x) === 0) return "NO";
+		map.set(x, map.get(x) - 1);
 	}
 	console.log(map);
 
